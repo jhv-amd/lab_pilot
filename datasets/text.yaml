@@ -1,0 +1,44 @@
+imdb_sentiment:
+  name: "IMDB Movie Reviews"
+  type: text
+  task: classification
+  target: sentiment
+  source: synthetic
+  description: "Movie review texts labeled positive/negative"
+  n_samples: 1000
+  classes: [negative, positive]
+  avg_text_length: 150
+  vocabulary_size: 5000
+
+spam_email:
+  name: "Email Spam Detection"
+  type: text
+  task: classification
+  target: label
+  source: synthetic
+  description: "Email texts labeled spam/ham"
+  n_samples: 800
+  classes: [ham, spam]
+  avg_text_length: 80
+
+news_categories:
+  name: "News Category Classification"
+  type: text
+  task: classification
+  target: category
+  source: synthetic
+  description: "News headlines labeled by category"
+  n_samples: 1000
+  classes: [politics, sports, technology, entertainment, business]
+  avg_text_length: 60
+
+synthetic_text:
+  name: "Synthetic Text Dataset"
+  type: text
+  task: classification
+  target: label
+  source: synthetic
+  description: "Synthetically generated text snippets"
+  n_samples: 600
+  classes: [class_a, class_b, class_c]
+  avg_text_length: 50

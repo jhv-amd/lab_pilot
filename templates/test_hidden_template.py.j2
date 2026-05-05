@@ -1,0 +1,25 @@
+"""Hidden grading tests for {{ topic }} — not distributed to students."""
+
+import warnings
+import numpy as np
+import pandas as pd
+from pathlib import Path
+from typing import Dict
+
+DATA_DIR = Path(__file__).parent / "data"
+
+{% for ex in exercises %}
+def test_{{ ex.function_name }}_comprehensive(func) -> Dict:
+    try:
+        {% for test in ex.hidden_tests %}
+        {{ test | indent(8) }}
+        {% endfor %}
+        return {"passed": True, "score": {{ ex.points }}, "max_score": {{ ex.points }}, "feedback": "All checks passed"}
+    except AssertionError as e:
+        return {"passed": False, "score": 0, "max_score": {{ ex.points }}, "feedback": str(e)}
+    except Exception as e:
+        return {"passed": False, "score": 0, "max_score": {{ ex.points }}, "feedback": f"Error: {e}"}
+
+test_{{ ex.function_name }}_comprehensive.max_score = {{ ex.points }}
+
+{% endfor %}

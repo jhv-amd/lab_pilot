@@ -1,0 +1,16 @@
+{
+  "assignment_id": "sample_generated_lab",
+  "topic": "Customer Churn Prediction",
+  "course": "machine_learning",
+  "dataset": "telco_churn",
+  "difficulty": "intermediate",
+  "total_points": 100,
+  "exercises": [
+    {"name": "explore_data",          "title": "Exercise 1: Data Exploration",          "points": 10},
+    {"name": "preprocess",            "title": "Exercise 2: Data Preprocessing",         "points": 20},
+    {"name": "train_classifier",      "title": "Exercise 3: Build Model",                "points": 30},
+    {"name": "evaluate_model",        "title": "Exercise 4: Model Evaluation",           "points": 30},
+    {"name": "tune_hyperparameters",  "title": "Bonus Exercise: Hyperparameter Tuning",  "points": 10}
+  ],
+  "generator_version": "1.0.0"
+}

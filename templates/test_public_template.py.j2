@@ -1,0 +1,16 @@
+"""Public tests for {{ topic }} — visible to students."""
+
+import numpy as np
+import pandas as pd
+from pathlib import Path
+
+DATA_DIR = Path(__file__).parent / "data"
+
+{% for ex in exercises %}
+def test_{{ ex.function_name }}(func):
+    {% for test in ex.public_tests %}
+    {{ test | indent(4) }}
+    {% endfor %}
+    print("  ✓ test_{{ ex.function_name }} passed")
+
+{% endfor %}

@@ -1,0 +1,18 @@
+{
+  "assignment_id": "{{ assignment_id }}",
+  "topic": "{{ topic }}",
+  "course": "{{ course }}",
+  "dataset": "{{ dataset }}",
+  "difficulty": "{{ difficulty }}",
+  "total_points": {{ total_points }},
+  "exercises": [
+    {% for ex in exercises %}
+    {
+      "name": "{{ ex.function_name }}",
+      "title": "{{ ex.title }}",
+      "points": {{ ex.points }}
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ],
+  "generator_version": "1.0.0"
+}

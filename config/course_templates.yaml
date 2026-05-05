@@ -1,0 +1,159 @@
+machine_learning:
+  generator: classification
+  default_exercises:
+    - data_exploration
+    - preprocessing
+    - model_building
+    - model_evaluation
+    - hyperparameter_tuning
+  common_imports:
+    - "import pandas as pd"
+    - "import numpy as np"
+    - "import matplotlib.pyplot as plt"
+    - "import seaborn as sns"
+    - "from sklearn.model_selection import train_test_split, GridSearchCV"
+    - "from sklearn.preprocessing import StandardScaler, LabelEncoder"
+    - "from sklearn.metrics import accuracy_score, classification_report, confusion_matrix"
+  topics:
+    - Customer Churn Prediction
+    - Credit Card Fraud Detection
+    - Spam Email Classification
+    - Iris Flower Classification
+    - Diabetes Prediction
+    - Heart Disease Classification
+  datasets:
+    - telco_churn
+    - credit_card_fraud
+    - spam_email
+    - iris
+    - diabetes
+    - synthetic
+
+regression:
+  generator: regression
+  default_exercises:
+    - data_exploration
+    - preprocessing
+    - model_building
+    - model_evaluation
+    - feature_engineering
+  common_imports:
+    - "import pandas as pd"
+    - "import numpy as np"
+    - "import matplotlib.pyplot as plt"
+    - "import seaborn as sns"
+    - "from sklearn.model_selection import train_test_split"
+    - "from sklearn.preprocessing import StandardScaler"
+    - "from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score"
+  topics:
+    - House Price Prediction
+    - Car Price Estimation
+    - Sales Forecasting
+    - Energy Consumption Prediction
+    - Student Performance Prediction
+  datasets:
+    - house_prices
+    - car_prices
+    - energy_consumption
+    - synthetic
+
+deep_learning:
+  generator: deep_learning
+  default_exercises:
+    - data_exploration
+    - data_preprocessing
+    - model_architecture
+    - model_training
+    - model_evaluation
+  common_imports:
+    - "import numpy as np"
+    - "import matplotlib.pyplot as plt"
+    - "import tensorflow as tf"
+    - "from tensorflow import keras"
+    - "from tensorflow.keras import layers"
+    - "from sklearn.model_selection import train_test_split"
+  topics:
+    - MNIST Digit Classification
+    - Binary Classification with MLP
+    - Multiclass Classification with Deep Network
+    - Regression with Neural Networks
+  datasets:
+    - mnist
+    - fashion_mnist
+    - synthetic
+
+nlp:
+  generator: nlp
+  default_exercises:
+    - text_exploration
+    - tokenization_cleaning
+    - feature_extraction
+    - model_training
+    - model_evaluation
+  common_imports:
+    - "import pandas as pd"
+    - "import numpy as np"
+    - "import re"
+    - "import string"
+    - "from sklearn.model_selection import train_test_split"
+    - "from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer"
+    - "from sklearn.metrics import accuracy_score, classification_report"
+  topics:
+    - Sentiment Analysis
+    - Spam Detection
+    - News Category Classification
+    - Movie Review Classification
+  datasets:
+    - imdb_sentiment
+    - spam_email
+    - news_categories
+    - synthetic_text
+
+computer_vision:
+  generator: computer_vision
+  default_exercises:
+    - data_exploration
+    - image_preprocessing
+    - cnn_model
+    - model_training
+    - model_evaluation
+  common_imports:
+    - "import numpy as np"
+    - "import matplotlib.pyplot as plt"
+    - "import tensorflow as tf"
+    - "from tensorflow import keras"
+    - "from tensorflow.keras import layers"
+    - "from sklearn.metrics import classification_report"
+  topics:
+    - Image Classification with CNN
+    - CIFAR-10 Object Recognition
+    - Fashion Item Classification
+    - Binary Image Classification
+  datasets:
+    - cifar10
+    - fashion_mnist
+    - mnist
+    - synthetic_images
+
+time_series:
+  generator: time_series
+  default_exercises:
+    - data_exploration
+    - time_series_preprocessing
+    - feature_engineering
+    - model_training
+    - forecasting_evaluation
+  common_imports:
+    - "import pandas as pd"
+    - "import numpy as np"
+    - "import matplotlib.pyplot as plt"
+    - "from sklearn.preprocessing import MinMaxScaler"
+    - "from sklearn.metrics import mean_squared_error, mean_absolute_error"
+  topics:
+    - Demand Forecasting
+    - Stock Price Prediction
+    - Energy Usage Forecasting
+    - Anomaly Detection in Time Series
+  datasets:
+    - synthetic_timeseries
+    - energy_timeseries

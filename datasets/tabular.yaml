@@ -1,0 +1,196 @@
+telco_churn:
+  name: "Telco Customer Churn"
+  type: tabular
+  task: classification
+  target: churned
+  source: synthetic
+  description: "Telecom customer data for churn prediction"
+  n_samples: 800
+  features:
+    - name: age
+      type: int
+      range: [18, 70]
+    - name: tenure_months
+      type: int
+      range: [1, 120]
+    - name: monthly_charges
+      type: float
+      range: [20, 120]
+    - name: total_charges
+      type: float
+      range: [20, 8000]
+    - name: num_products
+      type: int
+      range: [1, 5]
+    - name: support_calls
+      type: int
+      range: [0, 10]
+    - name: has_contract
+      type: int
+      range: [0, 1]
+    - name: payment_method
+      type: categorical
+      values: [credit_card, bank_transfer, electronic_check, mailed_check]
+  id_column: customer_id
+  missing_rate: 0.02
+
+credit_card_fraud:
+  name: "Credit Card Fraud Detection"
+  type: tabular
+  task: classification
+  target: is_fraud
+  source: synthetic
+  description: "Credit card transactions for fraud detection"
+  n_samples: 1000
+  features:
+    - name: amount
+      type: float
+      range: [1, 5000]
+    - name: hour_of_day
+      type: int
+      range: [0, 23]
+    - name: day_of_week
+      type: int
+      range: [0, 6]
+    - name: merchant_category
+      type: categorical
+      values: [retail, food, travel, entertainment, online]
+    - name: distance_from_home_km
+      type: float
+      range: [0, 500]
+    - name: transaction_count_30d
+      type: int
+      range: [0, 50]
+    - name: avg_amount_30d
+      type: float
+      range: [10, 300]
+  id_column: transaction_id
+  missing_rate: 0.01
+  class_imbalance: 0.05   # 5% fraud
+
+iris:
+  name: "Iris Flower Classification"
+  type: tabular
+  task: classification
+  target: species
+  source: sklearn
+  description: "Classic iris dataset — multiclass classification"
+  n_samples: 150
+  features:
+    - name: sepal_length
+      type: float
+    - name: sepal_width
+      type: float
+    - name: petal_length
+      type: float
+    - name: petal_width
+      type: float
+  classes: [setosa, versicolor, virginica]
+  missing_rate: 0.0
+
+diabetes:
+  name: "Diabetes Prediction"
+  type: tabular
+  task: classification
+  target: outcome
+  source: sklearn
+  description: "Patient health metrics for diabetes prediction"
+  n_samples: 768
+  features:
+    - name: pregnancies
+      type: int
+    - name: glucose
+      type: float
+    - name: blood_pressure
+      type: float
+    - name: skin_thickness
+      type: float
+    - name: insulin
+      type: float
+    - name: bmi
+      type: float
+    - name: diabetes_pedigree
+      type: float
+    - name: age
+      type: int
+  missing_rate: 0.0
+
+house_prices:
+  name: "House Price Prediction"
+  type: tabular
+  task: regression
+  target: price
+  source: synthetic
+  description: "Residential properties for price prediction"
+  n_samples: 800
+  features:
+    - name: sqft
+      type: int
+      range: [600, 4000]
+    - name: bedrooms
+      type: int
+      range: [1, 6]
+    - name: bathrooms
+      type: float
+      range: [1, 4]
+    - name: age_years
+      type: int
+      range: [0, 60]
+    - name: garage_spaces
+      type: int
+      range: [0, 2]
+    - name: neighborhood
+      type: categorical
+      values: [suburban, urban, rural]
+    - name: distance_city_km
+      type: float
+      range: [1, 50]
+    - name: school_rating
+      type: float
+      range: [3, 10]
+  id_column: house_id
+  missing_rate: 0.015
+
+car_prices:
+  name: "Car Price Estimation"
+  type: tabular
+  task: regression
+  target: price
+  source: synthetic
+  description: "Used car listings for price estimation"
+  n_samples: 700
+  features:
+    - name: year
+      type: int
+      range: [2000, 2023]
+    - name: mileage_km
+      type: int
+      range: [0, 300000]
+    - name: engine_size_l
+      type: float
+      range: [1.0, 5.0]
+    - name: horsepower
+      type: int
+      range: [70, 450]
+    - name: fuel_type
+      type: categorical
+      values: [petrol, diesel, hybrid, electric]
+    - name: transmission
+      type: categorical
+      values: [manual, automatic]
+    - name: brand_tier
+      type: int
+      range: [1, 3]
+  id_column: car_id
+  missing_rate: 0.02
+
+synthetic:
+  name: "Synthetic Dataset"
+  type: tabular
+  task: classification
+  target: label
+  source: sklearn_make_classification
+  description: "Synthetically generated dataset"
+  n_samples: 1000
+  n_features: 10
+  missing_rate: 0.0

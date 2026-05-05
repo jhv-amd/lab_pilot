@@ -1,0 +1,43 @@
+synthetic_timeseries:
+  name: "Synthetic Time Series"
+  type: timeseries
+  task: forecasting
+  source: synthetic
+  description: "Synthetically generated univariate time series with trend and seasonality"
+  n_points: 1000
+  frequency: daily
+  features:
+    - name: value
+      type: float
+    - name: trend
+      type: float
+    - name: seasonality_weekly
+      type: float
+    - name: noise
+      type: float
+  date_column: date
+  target: value
+  forecast_horizon: 30
+
+energy_timeseries:
+  name: "Energy Consumption Time Series"
+  type: timeseries
+  task: forecasting
+  source: synthetic
+  description: "Hourly energy consumption data with daily and weekly seasonality"
+  n_points: 2000
+  frequency: hourly
+  features:
+    - name: consumption_kwh
+      type: float
+    - name: temperature
+      type: float
+    - name: hour_of_day
+      type: int
+    - name: day_of_week
+      type: int
+    - name: is_weekend
+      type: int
+  date_column: timestamp
+  target: consumption_kwh
+  forecast_horizon: 24

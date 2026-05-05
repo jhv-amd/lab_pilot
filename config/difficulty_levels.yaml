@@ -1,0 +1,40 @@
+beginner:
+  description: "Step-by-step guidance with detailed hints"
+  hint_level: detailed
+  starter_code_completeness: 0.70   # fraction of solution pre-filled
+  test_strictness: lenient
+  min_accuracy_classification: 0.70
+  min_accuracy_regression_r2: 0.60
+  max_overfitting_gap: 0.15
+  bonus_exercise: false
+  instructions_style: verbose
+  hints:
+    - "Hint: Use pandas .isnull().sum() to count missing values"
+    - "Hint: Use train_test_split with test_size=0.2, random_state=42"
+    - "Hint: Try RandomForestClassifier or LogisticRegression"
+
+intermediate:
+  description: "Moderate guidance with key hints"
+  hint_level: moderate
+  starter_code_completeness: 0.30
+  test_strictness: standard
+  min_accuracy_classification: 0.80
+  min_accuracy_regression_r2: 0.75
+  max_overfitting_gap: 0.10
+  bonus_exercise: true
+  instructions_style: concise
+  hints:
+    - "Hint: Handle missing values before splitting"
+    - "Hint: Consider feature scaling"
+
+advanced:
+  description: "Minimal hints — research and experiment required"
+  hint_level: minimal
+  starter_code_completeness: 0.05
+  test_strictness: strict
+  min_accuracy_classification: 0.85
+  min_accuracy_regression_r2: 0.85
+  max_overfitting_gap: 0.05
+  bonus_exercise: true
+  instructions_style: brief
+  hints: []

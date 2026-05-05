@@ -1,0 +1,50 @@
+cifar10:
+  name: "CIFAR-10"
+  type: image
+  task: classification
+  source: "tensorflow.keras.datasets.cifar10"
+  description: "60,000 32x32 color images in 10 classes"
+  n_train: 50000
+  n_test: 10000
+  image_shape: [32, 32, 3]
+  n_classes: 10
+  classes: [airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck]
+  normalization: divide_255
+
+fashion_mnist:
+  name: "Fashion MNIST"
+  type: image
+  task: classification
+  source: "tensorflow.keras.datasets.fashion_mnist"
+  description: "70,000 28x28 grayscale clothing images in 10 classes"
+  n_train: 60000
+  n_test: 10000
+  image_shape: [28, 28, 1]
+  n_classes: 10
+  classes: [T-shirt, Trouser, Pullover, Dress, Coat, Sandal, Shirt, Sneaker, Bag, Ankle boot]
+  normalization: divide_255
+
+mnist:
+  name: "MNIST Handwritten Digits"
+  type: image
+  task: classification
+  source: "tensorflow.keras.datasets.mnist"
+  description: "70,000 28x28 grayscale handwritten digit images"
+  n_train: 60000
+  n_test: 10000
+  image_shape: [28, 28, 1]
+  n_classes: 10
+  classes: ["0","1","2","3","4","5","6","7","8","9"]
+  normalization: divide_255
+
+synthetic_images:
+  name: "Synthetic Image Dataset"
+  type: image
+  task: classification
+  source: synthetic
+  description: "Synthetically generated image-like arrays"
+  n_train: 1000
+  n_test: 200
+  image_shape: [32, 32, 3]
+  n_classes: 4
+  normalization: divide_255
